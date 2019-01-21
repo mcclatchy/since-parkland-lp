@@ -1,0 +1,44 @@
+// Saratoga Fuse skin import. Up to date remote
+@import url(https://media.mcclatchy.com/static/fuse/saratoga.css);
+
+@import 'base/fuse-nav';
+
+.content-body {
+  background-color: unset;
+}
+
+.drop-cap {
+  background-color: #222;
+  color: #fff;
+  font-weight: 600;
+  float: left;
+  font-size: 50px;
+  margin: 0 .15em 0 0;
+  padding: 8px 8px 0 8px;
+  line-height: 45px;
+}
+
+.content-body > h3:first-of-type {
+  font-family: "McClatchy Serif", "McClatchy Slab", serif;
+}
+
+/******************
+* SHARE ICON STYLES
+*******************/
+.share-wrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .share-link {
+    font-size: 25px;
+    color: #222;
+    transition: color 0.15s;
+    text-decoration: none;
+    margin-right: 10px;
+    &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}
