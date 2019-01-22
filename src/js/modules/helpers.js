@@ -2,13 +2,13 @@
  * querySelector with optional context (defualt is document)
  */
 
-const q$1 = (selector, context = document) => context.querySelector(selector);
+const $1 = (selector, context = document) => context.querySelector(selector);
 
 /**
  * querySelectorAll with optional context (defualt is document)
  */
 
-const q$ = (selector, context = document) => context.querySelectorAll(selector);
+const $ = (selector, context = document) => context.querySelectorAll(selector);
 
 /**
  * Elenables share buttons by adding window location to href of each link.
@@ -22,4 +22,4 @@ const enableShareButtons = selector => {
     }
 }
 
-export { q$, q$1, enableShareButtons}
+export { $, $1, enableShareButtons}

@@ -1,0 +1,85 @@
+/**
+* Reset 2020 Bootstrap rules
+*/
+
+$spacing: 15px !default;
+
+#masthead-container, .masthead {
+	margin-bottom: 0;
+}
+
+#leaderboard-ad {
+	margin: 0;
+	padding: 0;
+
+  .ad-widget {
+    margin: 0;
+
+    :not(:empty) {
+      margin: $spacing auto;
+    }
+  }
+}
+
+section[role=main].container.story {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+
+	.row {
+		margin: 0;
+	}
+
+	[class^=col-] {
+    width: 100%;
+		padding: 0;
+	}
+}
+
+/**
+ * lead media that's the first item
+ */
+
+.content-body > p:empty:first-child {
+  + .photo-inline-horizontal {
+    max-width: 100%;
+    margin-top: 0;
+
+    .inline-caption {
+      padding: 0 $spacing;
+    }
+  }
+
+  + .inline-video {
+    margin-top: 0;
+  }
+
+  + .embed-infographic {
+    margin-top: 0;
+  }
+}
+
+/**
+ * Changes for new story pages
+ */
+
+.content-body {
+  background-color: white;
+}
+
+.ng_endnote_contact:empty {
+  display: none;
+}
+
+#footer2018 {
+  margin-top: 0;
+}
+
+.container > .ad > .ad-widget { 
+  margin: 0;
+}
+
+.embed-infographic {
+    max-width: 100%;
+    padding: 0;
+}
