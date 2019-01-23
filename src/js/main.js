@@ -30,36 +30,25 @@ window.addEventListener('load', function() {
 
     time.startTime = time.then;
 
+    const increment = i => {
+        if (i > 275) return (i + 1)  / 4
+        return (i + 1) * 1.5
+    }
+
     const count = () => {
 
         if (stop) return;
 
-        requestAnimationFrame(count);
+        let requestID = requestAnimationFrame(count);
 
         time.now = performance.now();
         time.elapsed = time.now - time.then;
 
         let fpsInterval = 1000 / fps
 
-        if (index > 5) fps = 5
-        if (index > 10) fps = 7
-        if (index > 25) fps = 10
-        if (index > 50) fps = 20
-        if (index > 75) fps = 28
-        if (index > 100) fps = 35
-        if (index > 150) fps = 47
-        if (index > 175) fps = 53
-        if (index > 200) fps = 60
-        if (index > 250) fps = 50
-        if (index > 260) fps = 40
-        if (index > 270) fps = 35
-        if (index > 280) fps = 20
-        if (index > 290) fps = 15
-        if (index > 300) fps = 10
-        if (index > 310) fps = 5
-        if (index > 312) fps = 2
-
-    
+        fps = increment(index);
+        console.log(fps);
+        
         if (time.elapsed > fpsInterval && index < data.length) {
 
             time.then = time.now - (time.elapsed % fpsInterval);
@@ -73,6 +62,9 @@ window.addEventListener('load', function() {
             totalDate.innerText = apdate(date);
             total = sum;
             index++
+        }
+        else if (index >= data.length) {
+            cancelAnimationFrame(requestID);
         }
     };
 
