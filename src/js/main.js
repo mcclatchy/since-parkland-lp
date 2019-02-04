@@ -3,6 +3,18 @@ import { apdate, intcomma } from 'journalize';
 import * as d3 from 'd3-fetch';
 import csvFile from '../assets/IncidentsPerDate.csv';
 
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const host = 'www.miamiherald.com';
+
+  let market = host.slice(4, -4);
+
+  console.log(market);
+  
+  sortToTop(market);
+})
+
 window.addEventListener('load', function() {
   console.log('Loaded');
   let totalNum = $1('.total__num');
@@ -14,7 +26,6 @@ window.addEventListener('load', function() {
       count: +d['Count of Incident']
     };
   }).then(function(data) {
-
     let index = 0;
     let total = 0;
     let fps = 1;
@@ -25,49 +36,81 @@ window.addEventListener('load', function() {
       fpsInterval: 1000 / fps,
       then: performance.now(),
       now: null,
-      elapsed: null,
+      elapsed: null
     };
 
     time.startTime = time.then;
 
-    const increment = i => {
-        if (i > 275) return (i + 1)  / 4
-        return (i + 1) * 1.5
+    const increment = t => {
+      if (t < 6) return 2;
+      if ((t / data.length) > .96) return clamp(t * .02, 1, 60); 
+      if ((t / data.length) > .98) return clamp(t * .01, 1, 60); 
+      return clamp(t * .5, 1, 60)
     }
 
     const count = () => {
+      if (stop) return;
 
-        if (stop) return;
+      let requestID = requestAnimationFrame(count);
 
-        let requestID = requestAnimationFrame(count);
+      time.now = performance.now();
+      time.elapsed = time.now - time.then;
 
-        time.now = performance.now();
-        time.elapsed = time.now - time.then;
+      let fpsInterval = 1000 / fps;
 
-        let fpsInterval = 1000 / fps
+      if (time.elapsed > fpsInterval && index < data.length) {
+        time.then = time.now - (time.elapsed % fpsInterval);
 
-        fps = increment(index);
-        console.log(fps);
+        let date = data[index].date;
+        let count = data[index].count;
+
+        let sum = total + count;
+
+        totalNum.innerText = intcomma(sum);
+        totalDate.innerText = apdate(date);
+        total = sum;
+        index++;
         
-        if (time.elapsed > fpsInterval && index < data.length) {
+        let t = (index / data.length);
+        // console.log("Percent:", t * 100,"%");
+        
 
-            time.then = time.now - (time.elapsed % fpsInterval);
+        let x = increment(index);
 
-            let date = data[index].date;
-            let count = data[index].count;
+        fps = x;
+        // console.log("fps: ",fps);
+        
 
-            let sum = total + count;
-
-            totalNum.innerText = intcomma(sum);
-            totalDate.innerText = apdate(date);
-            total = sum;
-            index++
-        }
-        else if (index >= data.length) {
-            cancelAnimationFrame(requestID);
-        }
+      } else if (index >= data.length) {
+        cancelAnimationFrame(requestID);
+      }
     };
 
     requestAnimationFrame(count);
   });
+
+  function clamp(val, min, max) {
+    return val > max ? max : val < min ? min : val;
+  }
 });
+
+
+function sortToTop(market = "none") {
+
+  let links = document.querySelectorAll('.grid-link > a');
+
+  links.forEach(el => {
+    let hostName = el.href;
+    let hostMatch = hostName.match(/\w+(?=.com)/g);
+    if (market === hostMatch[0]) {
+      let match = hostMatch[0]
+      console.log("Match!", market, match);
+
+      el.parentElement.classList.add('grid-link--lead')
+
+      let region = el.parentElement.parentElement;
+      region.classList.add('grid__region--lead')
+
+    }
+  })  
+}

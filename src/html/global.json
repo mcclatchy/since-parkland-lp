@@ -1,28 +1,68 @@
 {
-    "stories": [
-        {
-            "chapter": "Chapter One",
-            "head": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            "img": "https://picsum.photos/640/359/",
-            "url": "000000000"
-        },
-        {
-            "chapter": "Chapter Two",
-            "head": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            "img": "https://picsum.photos/640/359/",
-            "url": "000000000"
-        },
-        {
-            "chapter": "Chapter Three",
-            "head": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            "img": "https://picsum.photos/640/359/",
-            "url": "000000000"
-        },
-        {
-            "chapter": "Chapter Four",
-            "head": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            "img": "https://picsum.photos/640/359/",
-            "url": "000000000"
-        }
-    ]
+	"national": [
+		{
+			"hed": "GunsLede Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsAccidents Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsDomestic Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsChange Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		}
+	],
+	"east": [
+		{
+			"hed": "GunsFlorida Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.miamiherald.com/sports/nfl/miami-dolphins/article225487245.html"
+		},
+		{
+			"hed": "GunsGeorgia1 Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsGeorgia2 Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		}
+	],
+	"carolinas": [
+		{
+			"hed": "GunsSouthCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsNothCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "#",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		}
+	],
+	"central": [
+		{
+			"hed": "GunsTexas Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsKansasCity Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "#",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		}
+	],
+	"west": [
+		{
+			"hed": "GunsCalifornia Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		}
+	]
 }

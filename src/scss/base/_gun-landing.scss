@@ -1,14 +1,16 @@
-$accent-color: #e0aa76;
+$accent-color: #f7b97c;
+$comp-color: #654523;
 
 .content-body,
 body section[role='main'] {
-  background-color: #000;
+  background-color: #180124;
 }
 
 .embed-infographic {
-  max-width: 1140px;
+  max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 60px;
 }
 
 /**************
@@ -18,18 +20,26 @@ body section[role='main'] {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.grid-stats {
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     'total total'
-    '. .'
-    '. .';
+    'stats-one stats-two';
+  grid-gap: 15px;
   gap: 15px;
 }
 
-.grid-item {
-  height: 200px;
-  border: 1px solid black;
-  width: 100px;
+.grid-links {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'lead lead lead'
+    '. . standout'
+    '. . standout'
+    '. . standout';
+  grid-gap: 30px;
+  gap: 30px;
 }
 
 /**************
@@ -61,11 +71,8 @@ body section[role='main'] {
 * ANIMATION STYLES *
 ********************/
 
-.animation-wrapper {
-  grid-area: total;
-}
-
 .total {
+  grid-area: total;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -92,7 +99,180 @@ body section[role='main'] {
     font-family: McClatchySans-Bold;
     font-size: 20px;
     color: #fff;
-    opacity: 0.2;
+    opacity: 0.5;
     letter-spacing: 1.4px;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: #fff;
+    text-align: center;
+  }
+  .stats__num {
+    font-size: 4vw;
+  }
+  .stats__cat {
+    color: #e0aa76;
+    font-size: 2vw;
+  }
+}
+
+.stats-one {
+  grid-area: stats-one;
+}
+.stats-two {
+  grid-area: stats-two;
+}
+
+/*******************
+* LINK CARD STYLES *
+********************/
+
+.grid__region {
+  border: 1px solid $comp-color;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  h4 {
+    color: #fff;
+    margin: 0;
+  }
+  .grid-link:not(:last-of-type)::after {
+      content: '';
+      display: block;
+      background-color: $comp-color;
+      width: 50%;
+      margin: 15px auto;
+      height: 1px;
+    }
+  .region__hed {
+    position: absolute;
+    top: 15px;
+    color: $accent-color;
+    font-family: "McClatchy Sans";
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .grid-link img {
+    display: none;
+  }
+}
+
+.grid__region--lead {
+  grid-area: lead;
+  border: none;
+  padding: 0;
+  .grid-link--lead {
+    position: relative;
+    margin-bottom: 15px;
+    img {
+      display: block;
+      width: 100%;
+    }
+    h4 {
+      position: absolute;
+      bottom: 0;
+      padding: 15px;
+      width: 100%;
+      font-size: 42px;
+      text-shadow: 0 0 4px #000000;
+    }
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+.grid__main {
+  grid-area: main;
+  position: relative;
+  height: 500px;
+  h4,
+  span {
+    text-shadow: 0 0 4px #000000;
+  }
+  h4 {
+    font-family: McClatchySerif-Regular;
+    font-size: 52px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+  }
+  span {
+    font-family: McClatchySans-Regular;
+    font-size: 19px;
+    color: $accent-color;
+    letter-spacing: 1.33px;
+    display: block;
+    line-height: 1;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    height: 100%;
+  }
+}
+
+.grid__card,
+.grid__standout {
+  border: 1px solid hsl(31, 33%, 30%);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 24px;
+  a {
+    color: #fff;
+  }
+  span {
+    font-family: 'McClatchy Sans';
+    font-size: 12px;
+    letter-spacing: 0.84px;
+    color: $accent-color;
+    display: block;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.grid__standout {
+  grid-area: standout;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  p {
+    color: #fff;
+    margin: 0;
+  }
+  .standout__title-a,
+  .standout__title-b {
+    font-family: McClatchySerif-Bold;
+    font-size: 45px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+  }
+  .standout__title-b {
+    color: $accent-color;
+    text-align: left;
+    margin-bottom: 8%;
+  }
+  .standout__subtitle {
+    max-width: 70%;
+    text-align: center;
   }
 }

@@ -1,17 +1,99 @@
-{%extends "templates/base.njk"%}
-
-{%block content%}
+{%extends "templates/base.njk"%} {%block content%}
 <div class="embed-infographic">
-<link rel="stylesheet" href="../scss/main.scss">
-<h1>Beyond Parkland</h1>
-<div class="grid-container">
-    <div class="animation-wrapper">
-        <div class="total">
-            <p class="num-wrapper">12 months, <span class="total__num">17</span> lives <em>lost</em>.</p> 
-            <p class="total__date">Feb. 14, 2018</p>
-        </div>
+  <link rel="stylesheet" href="../scss/main.scss" />
+  <style>
+    .content-body > p {
+      display: none !important;
+    }
+  </style>
+  <h1>Since Parkland</h1>
+  <div class="grid-container grid-stats">
+    <div class="total">
+      yarn
+      <p class="num-wrapper">
+        12 months, <span class="total__num">17</span> lives <em>lost</em>.
+      </p>
+      <p class="total__date">Feb. 14, 2018</p>
     </div>
-</div>
-<script src="../js/main.js"></script>
+    <div class="stats stats-one">
+      <span class="stats__num">00</span>
+      <span class="stats__cat">some something</span>
+    </div>
+    <div class="stats stats-two">
+      <span class="stats__num">00</span>
+      <span class="stats__cat">some something</span>
+    </div>
+  </div>
+  <div class="grid-container grid-links">
+    <div class="grid__region" data-region="national">
+      <span class="region__hed">National</span>
+      {% for each in national %}
+      <div class="grid-link"><a href="{{each.url}}">
+        {% if each.img %}
+        <img class="grid-link__img" src="{{each.img}}" alt="">
+        {% endif %}
+          <h4>{{each.hed}}</h4>
+        </a></div>
+      {% endfor %}
+    </div>
+
+    <div class="grid__standout">
+        <a href="#">
+            <p class="standout__title-a">CUT<br>DOWN</p>
+            <p class="standout__title-b">TOO<br>SOON</p>
+            <p class="standout__subtitle">Remembering the 1200 children taken by gun violence in America this year.</p>
+        </a>
+    </div>
+
+    <div class="grid__region" data-region="east">
+        <span class="region__hed">McClatchy East</span>
+        {% for each in east %}
+        <div class="grid-link"><a href="{{each.url}}">
+                {% if each.img %}
+                <img class="grid-link__img" src="{{each.img}}" alt="">
+                {% endif %}
+                <h4>{{each.hed}}</h4>
+            </a></div>
+        {% endfor %}
+    </div>
+
+    <div class="grid__region" data-region="carolinas">
+        <span class="region__hed">McClatchy Carolinas</span>
+        {% for each in carolinas %}
+        <div class="grid-link"><a href="{{each.url}}">
+                {% if each.img %}
+                <img class="grid-link__img" src="{{each.img}}" alt="">
+                {% endif %}
+                <h4>{{each.hed}}</h4>
+            </a></div>
+        {% endfor %}
+    </div>
+
+    <div class="grid__region" data-region="central">
+        <span class="region__hed">McClatchy Cental</span>
+        {% for each in central %}
+        <div class="grid-link"><a href="{{each.url}}">
+                {% if each.img %}
+                <img class="grid-link__img" src="{{each.img}}" alt="">
+                {% endif %}
+                <h4>{{each.hed}}</h4>
+            </a></div>
+        {% endfor %}
+    </div>
+
+    <div class="grid__region" data-region="west">
+        <span class="region__hed">McClatchy West</span>
+        {% for each in west %}
+        <div class="grid-link"><a href="{{each.url}}">
+                {% if each.img %}
+                <img class="grid-link__img" src="{{each.img}}" alt="">
+                {% endif %}
+                <h4>{{each.hed}}</h4>
+            </a></div>
+        {% endfor %}
+    </div>
+
+  </div>
+  <script src="../js/main.js"></script>
 </div>
 {%endblock%}

@@ -13,7 +13,7 @@
   },
   "config": {
     "url": "https://media.miamiherald.com/static/media/projects/2018/",
-    "docID": "[GOOGLE DOC ID]"
+    "docID": "1jkXouJI8iaKGCEBuCtxU1MED9gnRVdVU2kNZCQj2ld4"
   },
   "scripts": {
     "start": "parcel src/html/index.njk -p 3000",
