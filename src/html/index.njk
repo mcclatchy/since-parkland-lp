@@ -6,25 +6,25 @@
       display: none !important;
     }
   </style>
-  <h1>Since Parkland</h1>
+  <h1>Si<span>n</span>ce Parkland</h1>
   <div class="grid-container grid-stats">
     <div class="total">
-      yarn
       <p class="num-wrapper">
-        12 months, <span class="total__num">17</span> lives <em>lost</em>.
+        <span class="num-start">12 months,</span><br><span class="total__num">17</span><span class="total__date">Feb. 14, 2018</span><em>young lives lost</em>.
       </p>
-      <p class="total__date">Feb. 14, 2018</p>
     </div>
     <div class="stats stats-one">
-      <span class="stats__num">00</span>
-      <span class="stats__cat">some something</span>
+      <span class="stats__num">726</span>
+      <span class="stats__cat">Homicide</span>
     </div>
     <div class="stats stats-two">
-      <span class="stats__num">00</span>
-      <span class="stats__cat">some something</span>
+      <span class="stats__num">30</span>
+      <span class="stats__cat">Drive-By</span>
     </div>
   </div>
+
   <div class="grid-container grid-links">
+
     <div class="grid__region" data-region="national">
       <span class="region__hed">National</span>
       {% for each in national %}
@@ -45,52 +45,33 @@
         </a>
     </div>
 
-    <div class="grid__region" data-region="east">
-        <span class="region__hed">McClatchy East</span>
-        {% for each in east %}
+    {% for each in states %}
+    <div class="grid__region" data-state="{{each.state}}">
+        <span class="region__hed">{{each.state}}</span>
         <div class="grid-link"><a href="{{each.url}}">
-                {% if each.img %}
-                <img class="grid-link__img" src="{{each.img}}" alt="">
-                {% endif %}
-                <h4>{{each.hed}}</h4>
-            </a></div>
+            {% if each.img %}
+            <img class="grid-link__img" src="{{each.img}}" alt="">
+            {% endif %}
+            <h4>{{each.hed}}</h4>
+        </a></div>
+    </div>
+    {% endfor %}
+
+    <div class="grid__region" data-state="ga">
+        <span class="region__hed">Georgia</span>
+        {% for each in georgia %}
+        <div class="grid-link"><a href="{{each.url}}">
+            {% if each.img %}
+            <img class="grid-link__img" src="{{each.img}}" alt="">
+            {% endif %}
+            <h4>{{each.hed}}</h4>
+        </a></div>
         {% endfor %}
     </div>
 
-    <div class="grid__region" data-region="carolinas">
-        <span class="region__hed">McClatchy Carolinas</span>
-        {% for each in carolinas %}
-        <div class="grid-link"><a href="{{each.url}}">
-                {% if each.img %}
-                <img class="grid-link__img" src="{{each.img}}" alt="">
-                {% endif %}
-                <h4>{{each.hed}}</h4>
-            </a></div>
-        {% endfor %}
-    </div>
-
-    <div class="grid__region" data-region="central">
-        <span class="region__hed">McClatchy Cental</span>
-        {% for each in central %}
-        <div class="grid-link"><a href="{{each.url}}">
-                {% if each.img %}
-                <img class="grid-link__img" src="{{each.img}}" alt="">
-                {% endif %}
-                <h4>{{each.hed}}</h4>
-            </a></div>
-        {% endfor %}
-    </div>
-
-    <div class="grid__region" data-region="west">
-        <span class="region__hed">McClatchy West</span>
-        {% for each in west %}
-        <div class="grid-link"><a href="{{each.url}}">
-                {% if each.img %}
-                <img class="grid-link__img" src="{{each.img}}" alt="">
-                {% endif %}
-                <h4>{{each.hed}}</h4>
-            </a></div>
-        {% endfor %}
+    <div class="grid__video">
+        <iframe src="https://www.miamiherald.com/news/local/article222090545.html/video-embed"
+                width="640" height="400" frameborder="0" allowfullscreen="true"></iframe>
     </div>
 
   </div>

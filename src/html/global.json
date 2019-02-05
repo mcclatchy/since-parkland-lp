@@ -1,68 +1,70 @@
 {
-	"national": [
+	"states": [
 		{
-			"hed": "GunsLede Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		},
-		{
-			"hed": "GunsAccidents Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		},
-		{
-			"hed": "GunsDomestic Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		},
-		{
-			"hed": "GunsChange Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		}
-	],
-	"east": [
-		{
+			"state": "Florida",
 			"hed": "GunsFlorida Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
+			"img": "https://picsum.photos/1600/900?image=500",
 			"url": "https://www.miamiherald.com/sports/nfl/miami-dolphins/article225487245.html"
 		},
 		{
-			"hed": "GunsGeorgia1 Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
+			"state": "North Carolina",
+			"hed": "GunsNothCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=650",
 			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+		},
+		{
+			"state": "South Carolina",
+			"hed": "GunsSouthCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=150",
+			"url": "https://www.thestate.com/sports/article219407970.html"
+		},
+		{
+			"state": "Texas",
+			"hed": "GunsTexas Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=250",
+			"url": "https://www.star-telegram..com/sports/article219407970.html"
+		},
+		{
+			"state": "California",
+			"hed": "GunsCalifornia Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=350",
+			"url": "https://www.sacbee.com/sports/article219407970.html"
+		},
+		{
+			"state": "Kansas City",
+			"hed": "GunsKansasCity Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=550",
+			"url": "https://www.kansascity.com/sports/article219407970.html"
+		}
+	],
+	"georgia": [
+		{
+			"hed": "GunsGeorgia1 Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=820",
+			"url": "https://www.georgia.com/sports/article219407970.html"
 		},
 		{
 			"hed": "GunsGeorgia2 Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+			"url": "https://www.gerogia.com/sports/article219407970.html"
 		}
 	],
-	"carolinas": [
+	"national": [
 		{
-			"hed": "GunsSouthCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+			"hed": "GunsLede Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"img": "https://picsum.photos/1600/900?image=100",
+			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
 		},
 		{
-			"hed": "GunsNothCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "#",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		}
-	],
-	"central": [
-		{
-			"hed": "GunsTexas Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+			"hed": "GunsAccidents Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
 		},
 		{
-			"hed": "GunsKansasCity Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "#",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
-		}
-	],
-	"west": [
+			"hed": "GunsDomestic Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+		},
 		{
-			"hed": "GunsCalifornia Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"img": "https://picsum.photos/1600/900?image=550",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+			"hed": "GunsChange Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
 		}
 	]
 }

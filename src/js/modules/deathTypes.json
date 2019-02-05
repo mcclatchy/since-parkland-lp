@@ -1,0 +1,54 @@
+[
+    {
+        "type": "Accidental",
+        "count": 126
+    },
+    {
+        "type": "Domestic",
+        "count": 22
+    },
+    {
+        "type": "Drive-By",
+        "count": 30
+    },
+    {
+        "type": "Duplicate",
+        "count": 1
+    },
+    {
+        "type": "Homicide",
+        "count": 726
+    },
+    {
+        "type": "Mass Shooting",
+        "count": 1
+    },
+    {
+        "type": "Murder-Suicide",
+        "count": 94
+    },
+    {
+        "type": "Officer-Involved",
+        "count": 15
+    },
+    {
+        "type": "School Shooting",
+        "count": 24
+    },
+    {
+        "type": "Self Defense",
+        "count": 1
+    },
+    {
+        "type": "Self-Defense",
+        "count": 1
+    },
+    {
+        "type": "Suicide",
+        "count": 5
+    },
+    {
+        "type": "Victim Was Perpetrator",
+        "count": 25
+    }
+]

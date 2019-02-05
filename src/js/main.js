@@ -2,18 +2,23 @@ import { $1 } from './modules/helpers';
 import { apdate, intcomma } from 'journalize';
 import * as d3 from 'd3-fetch';
 import csvFile from '../assets/IncidentsPerDate.csv';
+import deathTypes from './modules/deathTypes.json';
 
+const r = /www.(\S+).com/;
 
 document.addEventListener('DOMContentLoaded', function() {
 
+  // const host = prompt('Which market are you coming from?', 'www.miamiherald.com')
   const host = 'www.miamiherald.com';
 
-  let market = host.slice(4, -4);
-
-  console.log(market);
+  let market = host.match(/www.(\S+).com/)[1];
   
   sortToTop(market);
-})
+  console.log(deathTypes);
+
+
+  
+});
 
 window.addEventListener('load', function() {
   console.log('Loaded');
@@ -42,10 +47,10 @@ window.addEventListener('load', function() {
     time.startTime = time.then;
 
     const increment = t => {
-      if (t < 6) return 2;
+      if (t < 5) return 2;
       if ((t / data.length) > .96) return clamp(t * .02, 1, 60); 
       if ((t / data.length) > .98) return clamp(t * .01, 1, 60); 
-      return clamp(t * .5, 1, 60)
+      return clamp(t * .68, 1, 60)
     }
 
     const count = () => {
@@ -71,13 +76,13 @@ window.addEventListener('load', function() {
         total = sum;
         index++;
         
-        let t = (index / data.length);
+        // let t = (index / data.length);
         // console.log("Percent:", t * 100,"%");
         
 
-        let x = increment(index);
+        fps = increment(index);
 
-        fps = x;
+        // fps = x;
         // console.log("fps: ",fps);
         
 
@@ -95,22 +100,36 @@ window.addEventListener('load', function() {
 });
 
 
-function sortToTop(market = "none") {
+function sortToTop(market) {
 
   let links = document.querySelectorAll('.grid-link > a');
 
+  let match;
+
   links.forEach(el => {
     let hostName = el.href;
-    let hostMatch = hostName.match(/\w+(?=.com)/g);
-    if (market === hostMatch[0]) {
-      let match = hostMatch[0]
-      console.log("Match!", market, match);
-
+    let hostMatch = hostName.match(r);
+    if (market === hostMatch[1]) {
+      match = true;
       el.parentElement.classList.add('grid-link--lead')
-
       let region = el.parentElement.parentElement;
       region.classList.add('grid__region--lead')
-
     }
-  })  
+  })
+
+  if (!match) {
+    let gridLinks = document.querySelector('.grid-links');
+    let nationalLede = document.querySelector('.grid__region[data-region=national] > .grid-link:first-of-type');
+    let ledeClone = nationalLede.cloneNode(true);
+    ledeClone.className = "grid-link grid-link--lead";
+
+    let ledeCard = document.createElement('div');
+    ledeCard.className = "grid__region grid__region--lead";
+
+    ledeCard.appendChild(ledeClone);
+
+    gridLinks.appendChild(ledeCard);
+
+
+  }
 }
