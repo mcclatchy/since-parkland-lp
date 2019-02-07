@@ -231,52 +231,6 @@ function startFadeAnimation(data) {
   }, 4000);
 }
 
-function startHeaderFade() {
-  let picNum = getRandomInt(0, 19);
-  let lastPic = picNum;
-
-  let imgPlace = 0;
-  let lastPlace = imgPlace;
-
-  let picsNames = Object.keys(pics);
-  let picsLength = picsNames.length;
-
-  setInterval(() => {
-    let headerImgs = document.querySelectorAll('.grid__header .header__img');
-
-    // while for random placement
-    while (imgPlace === lastPlace) {
-      imgPlace = getRandomInt(0, 4);
-    }
-    lastPlace = imgPlace;
-
-    // Pick random image from currently in header
-    let toSwitch = headerImgs[imgPlace];
-
-    // Create new image with src as sequence 0 to 19
-    let newImg = document.createElement('img');
-    newImg.className = 'header__img fade-out';
-    
-    newImg.src = pics[picsNames[picNum]];
-
-    // Inset new image and remove the other
-    
-    toSwitch.classList.add('fade-out');
-    
-    setTimeout(() => {
-      toSwitch.parentNode.insertBefore(newImg, toSwitch);
-      toSwitch.style.display = 'none';
-      setTimeout(() => {
-        newImg.classList.remove('fade-out');
-      }, 100);
-      toSwitch.remove();
-    }, 900);
-
-    picNum < picsLength - 1 ? picNum++ : (picNum = 0);
-
-  }, 5000);
-}
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
