@@ -12,10 +12,6 @@
         "count": 30
     },
     {
-        "type": "Duplicate",
-        "count": 1
-    },
-    {
         "type": "Homicide",
         "count": 726
     },
@@ -36,12 +32,8 @@
         "count": 24
     },
     {
-        "type": "Self Defense",
-        "count": 1
-    },
-    {
         "type": "Self-Defense",
-        "count": 1
+        "count": 2
     },
     {
         "type": "Suicide",
