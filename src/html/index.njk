@@ -10,7 +10,10 @@
   <div class="grid-container grid-stats">
     <div class="total">
       <p class="num-wrapper">
-        <span class="num-start">12 months,</span><br><span class="total__num">17</span><span class="total__date">Feb. 14, 2018</span><em>young lives lost</em>.
+        <span class="num-start">12 months,</span><br /><span class="total__num"
+          >17</span
+        ><span class="total__date">Feb. 14, 2018</span
+        ><em>young lives lost.</em>
       </p>
     </div>
     <div class="stats stats-one">
@@ -24,66 +27,84 @@
   </div>
 
   <div class="grid-container grid-links">
-
     <div class="grid__header">
-      <img class="header__img" src="../imgs/AHolloway.jpg" alt="">
-      <img class="header__img" src="../imgs/APetty.jpg" alt="">
-      <img class="header__img" src="../imgs/CLoughran.jpg" alt="">
-      <img class="header__img" src="../imgs/CMartinez.jpg" alt="">
-      <img class="header__img" src="../imgs/CSchentrup.jpg" alt="">
+      <div class="header__img">
+      </div>
+      <div class="header__img">
+      </div>
+      <div class="header__img">
+      </div>
+      <div class="header__img">
+      </div>
+      <div class="header__img">
+      </div>
     </div>
 
     <div class="grid__region" data-region="national">
       <span class="region__hed">National</span>
       {% for each in national %}
-      <div class="grid-link"><a href="{{each.url}}">
-        {% if each.img %}
-        <img class="grid-link__img" src="{{each.img}}" alt="">
-        {% endif %}
-          <h4>{{each.hed}}</h4>
-        </a></div>
+      <div class="grid-link">
+        <a href="{{ each.url }}">
+          {% if each.img %}
+          <img class="grid-link__img" src="{{ each.img }}" alt="" />
+          {% endif %}
+          <h4>{{ each.hed }}</h4>
+        </a>
+      </div>
       {% endfor %}
     </div>
 
     <div class="grid__standout">
-        <a href="#">
-            <p class="standout__title-a">CUT<br>DOWN</p>
-            <p class="standout__title-b">TOO<br>SOON</p>
-            <p class="standout__subtitle">Remembering the 1200 children taken by gun violence in America this year.</p>
-            <span class="standout__credit">In partnership with <img src="../assets/trace-logo.png" alt=""></span>
-        </a>
-        
+      <a href="#">
+        <p class="standout__title-a">CUT<br />DOWN</p>
+        <p class="standout__title-b">TOO<br />SOON</p>
+        <p class="standout__subtitle">
+          Remembering the 1200 children taken by gun violence in America this
+          year.
+        </p>
+        <span class="standout__credit"
+          >In partnership with <img src="../assets/trace-logo.png" alt=""
+        /></span>
+      </a>
     </div>
 
     {% for each in states %}
-    <div class="grid__region" data-state="{{each.state}}">
-        <span class="region__hed">{{each.state}}</span>
-        <div class="grid-link"><a href="{{each.url}}">
-            {% if each.img %}
-            <img class="grid-link__img" src="{{each.img}}" alt="">
-            {% endif %}
-            <h4>{{each.hed}}</h4>
-        </a></div>
+    <div class="grid__region" data-state="{{ each.state }}">
+      <span class="region__hed">{{ each.state }}</span>
+      <div class="grid-link">
+        <a href="{{ each.url }}">
+          {% if each.img %}
+          <img class="grid-link__img" src="{{ each.img }}" alt="" />
+          {% endif %}
+          <h4>{{ each.hed }}</h4>
+        </a>
+      </div>
     </div>
     {% endfor %}
 
     <div class="grid__region" data-state="ga">
-        <span class="region__hed">Georgia</span>
-        {% for each in georgia %}
-        <div class="grid-link"><a href="{{each.url}}">
-            {% if each.img %}
-            <img class="grid-link__img" src="{{each.img}}" alt="">
-            {% endif %}
-            <h4>{{each.hed}}</h4>
-        </a></div>
-        {% endfor %}
+      <span class="region__hed">Georgia</span>
+      {% for each in georgia %}
+      <div class="grid-link">
+        <a href="{{ each.url }}">
+          {% if each.img %}
+          <img class="grid-link__img" src="{{ each.img }}" alt="" />
+          {% endif %}
+          <h4>{{ each.hed }}</h4>
+        </a>
+      </div>
+      {% endfor %}
     </div>
 
     <div class="grid__video">
-        <iframe src="https://www.miamiherald.com/news/local/article222090545.html/video-embed"
-                width="640" height="400" frameborder="0" allowfullscreen="true"></iframe>
+      <iframe
+        src="https://www.miamiherald.com/news/local/article222090545.html/video-embed"
+        width="640"
+        height="400"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
     </div>
-
   </div>
   <script src="../js/main.js"></script>
 </div>

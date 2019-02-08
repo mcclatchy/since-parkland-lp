@@ -14,12 +14,33 @@ document.addEventListener('DOMContentLoaded', function() {
   let market = host.match(r)[1];
 
   sortToTop(market);
-  startFadeAnimation(deathTypes);
 
+  let headImgs = document.querySelectorAll('.header__img');
+
+  let picsNames = Object.keys(pics);
+
+  let selectPic = getRandomInt(0, 19);
+  let prevPic = selectPic;
+  let initialPics = [];
+
+  headImgs.forEach(el => {
+    while (selectPic == prevPic) {
+      selectPic = getRandomInt(0, 19);
+    }
+    prevPic = selectPic;
+    let img = document.createElement('img');
+    let dataName = picsNames[selectPic];
+    img.src = pics[dataName];
+    img.setAttribute('data-name', dataName);
+    el.appendChild(img);
+    initialPics.push(dataName);
+  });
+
+  console.log(initialPics);
+  startHeaderFade(initialPics);
 });
 
 window.addEventListener('load', function() {
-  console.log('Loaded');
   let totalNum = $1('.total__num');
   let totalDate = $1('.total__date');
 
@@ -67,27 +88,24 @@ window.addEventListener('load', function() {
         let date = data[index].date;
         let count = data[index].count;
 
+        // Current sum of deaths, adding to total;
         let sum = total + count;
 
         totalNum.innerText = intcomma(sum);
         totalDate.innerText = apdate(date);
+
         total = sum;
+
         index++;
 
-        // let t = (index / data.length);
-        // console.log("Percent:", t * 100,"%");
-
         fps = increment(index);
-
-        // fps = x;
-        // console.log("fps: ",fps);
       } else if (index >= data.length) {
         cancelAnimationFrame(requestID);
-        // startFadeAnimation(deathTypes);
+        startFadeAnimation(deathTypes);
       }
     };
 
-    // requestAnimationFrame(count);
+    requestAnimationFrame(count);
   });
 
   function clamp(val, min, max) {
@@ -128,20 +146,64 @@ function sortToTop(market) {
   }
 }
 
-function startFadeAnimation(data) {
-  let statOne = document.querySelector('.stats.stats-one');
-  let statTwo = document.querySelector('.stats.stats-two');
-
-  let picNum = getRandomInt(0, 19);
-  let lastPic = picNum;
-
+function startHeaderFade(startPics) {
   let imgPlace = 0;
   let lastPlace = imgPlace;
 
   let picsNames = Object.keys(pics);
-  let picsLength = picsNames.length;
 
-  let length = data.length + picsLength;
+  let picNum = getRandomInt(0, 19);
+
+  let currentPics = startPics;
+
+  setInterval(() => {
+    let headerImgs = document.querySelectorAll('.grid__header .header__img');
+
+    // while for random placement
+    while (imgPlace === lastPlace) {
+      imgPlace = getRandomInt(0, 4);
+    }
+    lastPlace = imgPlace;
+
+    while (currentPics.includes(picsNames[picNum])) {
+      picNum = getRandomInt(0, 19);
+    }
+
+    // New picture to insert
+    let dataName = picsNames[picNum];
+
+    // Pick random image from currently in header
+    let toSwitch = headerImgs[imgPlace];
+    let switchName = toSwitch.firstElementChild.getAttribute('data-name');
+
+    // Create new image with src as sequence 0 to 19
+    let newImg = document.createElement('img');
+    newImg.className = 'img-new fade-out';
+    newImg.src = pics[dataName];
+    newImg.setAttribute('data-name', dataName);
+    toSwitch.appendChild(newImg);
+
+    // Inset new image and remove the other
+    setTimeout(() => {
+      newImg.classList.remove('fade-out');
+    }, 100);
+    setTimeout(() => {
+      newImg.classList.remove('img-new');
+      toSwitch.firstElementChild.remove();
+    }, 2000);
+
+    // Removes old swapped pic from array and adds new one
+    currentPics = currentPics.filter(name => name !== switchName);
+    currentPics.push(dataName);
+    
+  }, 5000);
+}
+
+function startFadeAnimation(data) {
+  let statOne = document.querySelector('.stats.stats-one');
+  let statTwo = document.querySelector('.stats.stats-two');
+
+  let length = data.length;
 
   let dataInt = 0;
 
@@ -154,74 +216,32 @@ function startFadeAnimation(data) {
     type.innerText = data[dataInt].type;
     statOne.classList.add('visible');
     dataInt = 1;
-    counter = 2;
-  }, 2000); // 2 to get next cat before others
+    counter = 2; // 2 to get next cat before others
+  }, 2000);
 
   setInterval(() => {
     if (counter < length) {
       if (counter % 4 == 0) {
-        let number = statOne.querySelector('.stats__num');
-        let type = statOne.querySelector('.stats__cat');
-        number.innerText = data[dataInt].count;
-        type.innerText = data[dataInt].type;
-        statOne.classList.add('visible');
-        dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
+        statOne.classList.remove('visible');
         setTimeout(() => {
-          statTwo.classList.remove('visible');
+          let number = statOne.querySelector('.stats__num');
+          let type = statOne.querySelector('.stats__cat');
+          number.innerText = data[dataInt].count;
+          type.innerText = data[dataInt].type;
+          statOne.classList.add('visible');
+          dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
         }, 1000);
-
-      } else if (counter % 4 == 1 || counter % 4 == 3) {
-        let headerImgs = document.querySelectorAll(
-          '.grid__header .header__img'
-        );
-
-        // while for random placement
-        while (imgPlace === lastPlace) {
-          imgPlace = getRandomInt(0, 4);
-        }
-        lastPlace = imgPlace;
-
-        // while for random placement
-        while (picNum === lastPic) {
-          picNum = getRandomInt(0, 4);
-        }
-        lastPic = picNum;
-
-        // Pick random image from currently in header
-        let toSwitch = headerImgs[imgPlace];
-
-        // Create new image with src as sequence 0 to 19
-        let newImg = document.createElement('img');
-        newImg.className = 'header__img fade-out';
-
-        newImg.src = pics[picsNames[picNum]];
-
-        // Inset new image and remove the other
-
-        toSwitch.classList.add('fade-out');
-
-        setTimeout(() => {
-          toSwitch.parentNode.insertBefore(newImg, toSwitch);
-          toSwitch.style.display = 'none';
-          setTimeout(() => {
-            newImg.classList.remove('fade-out');
-          }, 100);
-          toSwitch.remove();
-        }, 900);
-
-        picNum < picsLength - 1 ? picNum++ : (picNum = 0);
       } else if (counter % 4 == 2) {
-        let number = statTwo.querySelector('.stats__num');
-        let type = statTwo.querySelector('.stats__cat');
-        number.innerText = data[dataInt].count;
-        type.innerText = data[dataInt].type;
-        statTwo.classList.add('visible');
-        dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
+        statTwo.classList.remove('visible');
         setTimeout(() => {
-          statOne.classList.remove('visible');
+          let number = statTwo.querySelector('.stats__num');
+          let type = statTwo.querySelector('.stats__cat');
+          number.innerText = data[dataInt].count;
+          type.innerText = data[dataInt].type;
+          statTwo.classList.add('visible');
+          dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
         }, 1000);
       }
-      console.log(dataInt);
       counter++;
     } else {
       statOne.classList.remove('visible');
