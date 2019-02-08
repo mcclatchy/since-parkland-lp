@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initialPics.push(dataName);
   });
 
-  console.log(initialPics);
   startHeaderFade(initialPics);
 });
 
@@ -156,6 +155,8 @@ function startHeaderFade(startPics) {
 
   let currentPics = startPics;
 
+  let lastPics = currentPics;
+
   setInterval(() => {
     let headerImgs = document.querySelectorAll('.grid__header .header__img');
 
@@ -165,7 +166,10 @@ function startHeaderFade(startPics) {
     }
     lastPlace = imgPlace;
 
-    while (currentPics.includes(picsNames[picNum])) {
+    while (
+      currentPics.includes(picsNames[picNum]) ||
+      lastPics.includes(picsNames[picNum])
+    ) {
       picNum = getRandomInt(0, 19);
     }
 
@@ -176,7 +180,7 @@ function startHeaderFade(startPics) {
     let toSwitch = headerImgs[imgPlace];
     let switchName = toSwitch.firstElementChild.getAttribute('data-name');
 
-    // Create new image with src as sequence 0 to 19
+    // Create new image from randomly selected name
     let newImg = document.createElement('img');
     newImg.className = 'img-new fade-out';
     newImg.src = pics[dataName];
@@ -192,11 +196,12 @@ function startHeaderFade(startPics) {
       toSwitch.firstElementChild.remove();
     }, 2000);
 
+    lastPics = currentPics;
+
     // Removes old swapped pic from array and adds new one
     currentPics = currentPics.filter(name => name !== switchName);
     currentPics.push(dataName);
-    
-  }, 5000);
+  }, 3000);
 }
 
 function startFadeAnimation(data) {
@@ -244,8 +249,8 @@ function startFadeAnimation(data) {
       }
       counter++;
     } else {
-      statOne.classList.remove('visible');
-      statTwo.classList.remove('visible');
+      // statOne.classList.remove('visible');
+      // statTwo.classList.remove('visible');
       counter = 0;
     }
   }, 4000);

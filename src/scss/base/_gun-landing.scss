@@ -199,7 +199,7 @@ body section[role='main'] {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   .header__img {
     position: relative;
     opacity: .5;
@@ -283,6 +283,7 @@ body section[role='main'] {
     h4 {
       width: 100%;
       font-size: 3.3em;
+      text-align: center;
     }
     &::after {
       display: none !important;
