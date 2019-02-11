@@ -1,66 +1,66 @@
 {
 	"states": [
 		{
+			"state": "California",
+			"hed": "Stanislaus County ranks No. 2 in California in youth gun deaths. Is it a trend?",
+			"url": "https://www.modbee.com/news/local/crime/article225014865.html"
+		},
+		{
 			"state": "Florida",
-			"hed": "GunsFlorida Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "In post-Parkland Florida, young people are still dying from gun violence",
 			"url": "https://www.miamiherald.com/news/state/florida/article224898685.html"
 		},
 		{
+			"state": "Kansas City",
+			"hed": "More than 50 children killed in 3 years: Guns take a heavy toll in Kansas City area",
+			"url": "https://www.kansascity.com/news/local/crime/article224964390.html"
+		},
+		{
 			"state": "North Carolina",
-			"hed": "GunsNothCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "‘What insanity is that?’ Hundreds of NC children dying, injured by guns.",
 			"url": "https://www.newsobserver.com/latest-news/article225348755.html"
 		},
 		{
 			"state": "South Carolina",
-			"hed": "GunsSouthCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "‘It’s become so normal’: 35 South Carolina kids and teens killed by guns in 2018",
 			"url": "https://www.thestate.com/latest-news/article224972585.html"
 		},
 		{
 			"state": "Texas",
-			"hed": "GunsTexas Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "Texas student after school shootings: ‘I feel we are always on guard’",
 			"url": "https://www.star-telegram.com/news/state/texas/article225181630.html"
-		},
-		{
-			"state": "California",
-			"hed": "GunsCalifornia Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.modbee.com/news/local/crime/article225014865.html"
-		},
-		{
-			"state": "Kansas City",
-			"hed": "GunsKansasCity Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.kansascity.com/news/local/crime/article224964390.html"
 		}
 	],
 	"georgia": [
 		{
-			"hed": "GunsGeorgia1 Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "‘Love does not hurt’: Domestic violence behind half of Columbus’ shooting deaths of teens",
 			"url": "https://www.ledger-enquirer.com/news/state/georgia/article225081960.html"
 		},
 		{
-			"hed": "GunsGeorgia2 Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"hed": "‘They just don’t value life,’ homicide investigator says of deadly youth gun violence",
 			"url": "https://www.macon.com/news/state/georgia/article224947945.html"
 		}
 	],
 	"national": [
 		{
-			"hed": "GunsLede Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+			"hed": "12 months, nearly 1,200 deaths: the year in youth gun violence since Parkland",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article224680840.html"
 		},
 		{
-			"hed": "GunsAccidents Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+			"hed": "Do careless gun owners go to jail when their kids shoot themselves? It depends",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article225006255.html"
 		},
 		{
-			"hed": "GunsDomestic Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+			"hed": "When love turns to hate, innocent kids become collateral targets",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article224983580.html"
 		},
 		{
-			"hed": "GunsChange Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+			"hed": "In the great gun debate, Parkland changed everything. And nothing",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article224594280.html"
 		},
 		{
-			"hed": "GunsFifth Delawar",
-			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+			"hed": "How Wilmington DE is curbing gun violence among teens, kids",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article226090070.html"
 		}
 	]
 }

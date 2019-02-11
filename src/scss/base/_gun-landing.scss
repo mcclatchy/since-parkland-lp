@@ -289,6 +289,10 @@ body section[role='main'] {
       display: none !important;
     }
   }
+  .grid-link--lead + .grid-link {
+    border-top: 1px solid $comp-color;
+    margin-top: 15px;
+  }
 }
 
 .grid__standout {
@@ -410,5 +414,13 @@ body section[role='main'] {
   }
   .grid__standout {
     min-height: 320px;
+  }
+  .grid__header {
+    .header__img img {
+      width: 100%; 
+    }
+  }
+  .grid__header > div:nth-of-type(2n) {
+    display: none;
   }
 }

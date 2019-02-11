@@ -10,9 +10,19 @@ const imgMax = 29;
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // const host = prompt('Which market are you coming from?', 'www.miamiherald.com')
-  const host = 'www.ledger-enquirer.com';
+  const host = 'www.miamiherald.com';
   let market = host.match(r)[1];
+
+  switch (market) {
+    case 'sacbee':
+    case 'fresnobee':
+    case 'mercedsunstar':
+      market = 'modbee';
+      break;
+    case 'charlotteobserver':
+      market = 'newsobserver';
+      break;
+  }
   
   sortToTop(market); // Moves story to top based on market location
 
@@ -118,18 +128,9 @@ function sortToTop(market) {
     let hostName = el.href;
     let hostMatch = hostName.match(r);
 
-    switch (hostMatch) {
-      case 'sacbee':
-      case 'fresnobee':
-      case 'mercedsunstar':
-        hostMatch = 'modbee';
-        break;
-      case 'charlotteobserver':
-        hostMatch = 'newsobserver';
-        break;
-    }
+    let stateCheck = el.parentElement.parentElement.getAttribute('data-state');
 
-    if (market === hostMatch[1]) {
+    if (market === hostMatch[1] && stateCheck) {
       match = true;
       el.parentElement.classList.add('grid-link--lead');
       let region = el.parentElement.parentElement;
