@@ -1,52 +1,50 @@
 import { $1 } from './modules/helpers';
 import { apdate, intcomma } from 'journalize';
 import * as d3 from 'd3-fetch';
-import csvFile from '../assets/IncidentsPerDate.csv';
+import csvFile from '../assets/PerDate_2-8-19.csv';
 import deathTypes from './modules/deathTypes.json';
 import pics from '../imgs/*.jpg';
 
 const r = /www.(\S+).com/; // regex to extract market name
+const imgMax = 29;
 
 document.addEventListener('DOMContentLoaded', function() {
+
   // const host = prompt('Which market are you coming from?', 'www.miamiherald.com')
-  const host = 'www.miamiherald.com';
-
+  const host = 'www.ledger-enquirer.com';
   let market = host.match(r)[1];
+  
+  sortToTop(market); // Moves story to top based on market location
 
-  sortToTop(market);
-
+  // Loads initial set of images
   let headImgs = document.querySelectorAll('.header__img');
 
   let picsNames = Object.keys(pics);
-
-  let selectPic = getRandomInt(0, 19);
-  let prevPic = selectPic;
+  let picsNum = getRandomInt(0, imgMax);
   let initialPics = [];
 
   headImgs.forEach(el => {
-    while (selectPic == prevPic) {
-      selectPic = getRandomInt(0, 19);
+    while (initialPics.includes(picsNames[picsNum])) {
+      picsNum = getRandomInt(0, imgMax);
     }
-    prevPic = selectPic;
     let img = document.createElement('img');
-    let dataName = picsNames[selectPic];
+    let dataName = picsNames[picsNum];
     img.src = pics[dataName];
     img.setAttribute('data-name', dataName);
     el.appendChild(img);
     initialPics.push(dataName);
+    
   });
 
   startHeaderFade(initialPics);
-});
 
-window.addEventListener('load', function() {
   let totalNum = $1('.total__num');
   let totalDate = $1('.total__date');
 
   d3.csv(csvFile, function(d) {
     return {
       date: new Date(d['Date of Incident']),
-      count: +d['Count of Incident']
+      count: +d['Count']
     };
   }).then(function(data) {
     let index = 0;
@@ -114,12 +112,23 @@ window.addEventListener('load', function() {
 
 function sortToTop(market) {
   let links = document.querySelectorAll('.grid-link > a');
-
   let match;
 
   links.forEach(el => {
     let hostName = el.href;
     let hostMatch = hostName.match(r);
+
+    switch (hostMatch) {
+      case 'sacbee':
+      case 'fresnobee':
+      case 'mercedsunstar':
+        hostMatch = 'modbee';
+        break;
+      case 'charlotteobserver':
+        hostMatch = 'newsobserver';
+        break;
+    }
+
     if (market === hostMatch[1]) {
       match = true;
       el.parentElement.classList.add('grid-link--lead');
@@ -140,7 +149,6 @@ function sortToTop(market) {
     ledeCard.className = 'grid__region grid__region--lead';
 
     ledeCard.appendChild(ledeClone);
-
     gridLinks.appendChild(ledeCard);
   }
 }
@@ -150,11 +158,9 @@ function startHeaderFade(startPics) {
   let lastPlace = imgPlace;
 
   let picsNames = Object.keys(pics);
-
-  let picNum = getRandomInt(0, 19);
+  let picNum = getRandomInt(0, imgMax);
 
   let currentPics = startPics;
-
   let lastPics = currentPics;
 
   setInterval(() => {
@@ -170,7 +176,7 @@ function startHeaderFade(startPics) {
       currentPics.includes(picsNames[picNum]) ||
       lastPics.includes(picsNames[picNum])
     ) {
-      picNum = getRandomInt(0, 19);
+      picNum = getRandomInt(0, imgMax);
     }
 
     // New picture to insert
@@ -201,7 +207,7 @@ function startHeaderFade(startPics) {
     // Removes old swapped pic from array and adds new one
     currentPics = currentPics.filter(name => name !== switchName);
     currentPics.push(dataName);
-  }, 3000);
+  }, 3500);
 }
 
 function startFadeAnimation(data) {
@@ -209,9 +215,7 @@ function startFadeAnimation(data) {
   let statTwo = document.querySelector('.stats.stats-two');
 
   let length = data.length;
-
   let dataInt = 0;
-
   let counter = 0;
 
   setTimeout(() => {
@@ -229,31 +233,28 @@ function startFadeAnimation(data) {
       if (counter % 4 == 0) {
         statOne.classList.remove('visible');
         setTimeout(() => {
-          let number = statOne.querySelector('.stats__num');
-          let type = statOne.querySelector('.stats__cat');
-          number.innerText = data[dataInt].count;
-          type.innerText = data[dataInt].type;
-          statOne.classList.add('visible');
-          dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
+          showStat(statOne);
         }, 1000);
       } else if (counter % 4 == 2) {
         statTwo.classList.remove('visible');
         setTimeout(() => {
-          let number = statTwo.querySelector('.stats__num');
-          let type = statTwo.querySelector('.stats__cat');
-          number.innerText = data[dataInt].count;
-          type.innerText = data[dataInt].type;
-          statTwo.classList.add('visible');
-          dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
+          showStat(statTwo);
         }, 1000);
       }
       counter++;
     } else {
-      // statOne.classList.remove('visible');
-      // statTwo.classList.remove('visible');
       counter = 0;
     }
   }, 4000);
+
+  function showStat(whichStat) {
+    let number = whichStat.querySelector('.stats__num');
+    let type = whichStat.querySelector('.stats__cat');
+    number.innerText = data[dataInt].count;
+    type.innerText = data[dataInt].type;
+    whichStat.classList.add('visible');
+    dataInt < data.length - 1 ? dataInt++ : (dataInt = 0);
+  }
 }
 
 function getRandomInt(min, max) {
