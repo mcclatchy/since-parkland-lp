@@ -3,42 +3,42 @@
 		{
 			"state": "Florida",
 			"hed": "GunsFlorida Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.miamiherald.com/sports/nfl/miami-dolphins/article225487245.html"
+			"url": "https://www.miamiherald.com/news/state/florida/article224898685.html"
 		},
 		{
 			"state": "North Carolina",
 			"hed": "GunsNothCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.charlotteobserver.com/sports/article219407970.html"
+			"url": "https://www.newsobserver.com/latest-news/article225348755.html"
 		},
 		{
 			"state": "South Carolina",
 			"hed": "GunsSouthCarolina Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.thestate.com/sports/article219407970.html"
+			"url": "https://www.thestate.com/latest-news/article224972585.html"
 		},
 		{
 			"state": "Texas",
 			"hed": "GunsTexas Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.star-telegram..com/sports/article219407970.html"
+			"url": "https://www.star-telegram.com/news/state/texas/article225181630.html"
 		},
 		{
 			"state": "California",
 			"hed": "GunsCalifornia Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.sacbee.com/sports/article219407970.html"
+			"url": "https://www.modbee.com/news/local/crime/article225014865.html"
 		},
 		{
 			"state": "Kansas City",
 			"hed": "GunsKansasCity Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.kansascity.com/sports/article219407970.html"
+			"url": "https://www.kansascity.com/news/local/crime/article224964390.html"
 		}
 	],
 	"georgia": [
 		{
 			"hed": "GunsGeorgia1 Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.georgia.com/sports/article219407970.html"
+			"url": "https://www.ledger-enquirer.com/news/state/georgia/article225081960.html"
 		},
 		{
 			"hed": "GunsGeorgia2 Lorem ipsum dolor sit amet consectetur adipiscing elit",
-			"url": "https://www.gerogia.com/sports/article219407970.html"
+			"url": "https://www.macon.com/news/state/georgia/article224947945.html"
 		}
 	],
 	"national": [
@@ -56,6 +56,10 @@
 		},
 		{
 			"hed": "GunsChange Lorem ipsum dolor sit amet consectetur adipiscing elit",
+			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
+		},
+		{
+			"hed": "GunsFifth Delawar",
 			"url": "https://www.mcclatchydc.com/sports/article219407970.html"
 		}
 	]
