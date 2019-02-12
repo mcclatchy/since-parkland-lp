@@ -1,5 +1,4 @@
 {%extends "templates/base.njk"%} {%block content%}
-<div class="embed-infographic">
   <link rel="stylesheet" href="../scss/main.scss" />
   <style>
     .content-body > p {
@@ -107,7 +106,35 @@
         frameborder="0" allowfullscreen="true"></iframe>
     </div>
   </div>
-  <div class="lp-credits">Design and development by Aaron Albright</div>
+  <div class="grid-container grid-credits">
+    <div class="credit__group">
+    <span class="credit__label">Project Staff</span>
+    <p class="credit__name">Casey Frank, Project Editor</p>
+    <p class="credit__name">Caitlin Ostroff, Data Reporter</p>
+    <p class="credit__name">Aaron Albright, Interaction Designer</p>
+    <p class="credit__name">Jessica Gilbert, Director of Design / McClatchy</p>
+    <p class="credit__name">Eduardo Alvarez, Senior Manager of Design / McClatchy</p>
+    <p class="credit__name">Aminda Marques Gonzalez, Executive Editor</p>
+    <p class="credit__name">Rick Hirsch, Managing Editor</p>
+    </div>
+    <div class="credit__group">
+    <span class="credit__label">McClatchy Reporters</span>
+    <p class="credit__name">Virginia Bridges, Tim Chitwood, Lexi Cortes, Amy Driscoll, Liz Fabian, Glenn Garvin, Kevin G. Hall, Alex Harris, Jason Koch, John Monk, Caitlin Ostroff, Phillip Reese, Joe&nbsp;Robertson, Diane Smith, Carli Teproff, Anna M. Tinsley, Erin Tracy, Martin Vassolo</p>
+    </div>
+    <div class="credit__group">
+    <span class="credit__label">Visual Journalists</span>
+    <p class="credit__name">Marcus Dorsey, Travis Long, Esther Medina, Emily Michot, Matias J. Ocner, Marta Oliver Craviotto, Tiffany Tompkins</p>
+    </div>
+    <div class="credit__group">
+    <span class="credit__label">Social Media Editors</span>
+    <p class="credit__name">Jessica Huff, Adrian Ruhi</p>
+    </div>
+    <div class="credit__group">
+    <span class="credit__label">Copy Editor</span>
+    <p class="credit__name">Mary Behne</p>
+    </div>
+
+    
+  </div>
   <script src="../js/main.js"></script>
-</div>
 {%endblock%}

@@ -73,5 +73,48 @@
 			"hed": "How we tracked gun violence across the country since Parkland",
 			"url": "https://www.miamiherald.com/news/nation-world/national/article224957145.html"
 		}
+	],
+	"credits": [
+		{
+			"name": "Casey Frank, Project Editor"
+		},
+		{
+			"name": "Caitlin Ostroff, Data Reporter"
+		},
+		{
+			"name": "Aaron Albright, Interaction Designer"
+		},
+		{
+			"name": "Jessica Gilbert, Director of Design / McClatchy"
+		},
+		{
+			"name": "Eduardo Alvarez, Senior Manager of Design / McClatchy"
+		},
+		{
+			"name": "Aminda Marques Gonzalez, Executive Editor"
+		},
+		{
+			"name": "Rick Hirsch, Managing Editor",
+			"McClatchy-Reporters": [
+				{
+					"name": "Virginia Bridges, Tim Chitwood, Lexi Cortes, Amy Driscoll, Liz Fabian, Glenn Garvin, Kevin G. Hall, Alex Harris, Jason Koch, John Monk, Caitlin Ostroff, Phillip Reese, Joe Robertson, Diane Smith, Carli Teproff, Anna M. Tinsley, Erin Tracy, Martin Vassolo"
+				}
+			],
+			"Visual-Journalists": [
+				{
+					"name": "Marcus Dorsey, Travis Long, Esther Medina, Emily Michot, Matias J. Ocner, Marta Oliver Craviotto, Tiffany Tompkins"
+				}
+			],
+			"Social-Media-Editors": [
+				{
+					"name": "Jessica Huff, Adrian Ruhi"
+				}
+			],
+			"Cody-Editor": [
+				{
+					"name": "Mary Behne"
+				}
+			]
+		}
 	]
 }
