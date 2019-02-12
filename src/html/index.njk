@@ -1,5 +1,5 @@
-{# {%extends "templates/base.njk"%} {%block content%} #}
-{# <div class="embed-infographic"> #}
+{%extends "templates/base.njk"%} {%block content%}
+<div class="embed-infographic">
   <link rel="stylesheet" href="../scss/main.scss" />
   <style>
     .content-body > p {
@@ -11,8 +11,8 @@
     <div class="total">
       <p class="num-wrapper">
         <span class="num-start">12 months,</span><span class="total__num"
-          >&nbsp;</span
-        ><span class="total__date">&nbsp;</span
+          >17</span
+        ><span class="total__date">Feb. 14, 2018</span
         ><em>young lives lost.</em>
       </p>
     </div>
@@ -45,9 +45,6 @@
       {% for each in national %}
       <div class="grid-link">
         <a href="{{ each.url }}">
-          {% if each.img %}
-          <img class="grid-link__img" src="{{ each.img }}" alt="" />
-          {% endif %}
           <h4>{{ each.hed }}</h4>
         </a>
       </div>
@@ -55,11 +52,9 @@
     </div>
 
     <div class="grid__standout">
-      <a href="#">
-        <p class="standout__title-a">CUT<br />DOWN</p>
-        <p class="standout__title-b">TOO<br />SOON</p>
+      <a href="https://sinceparkland.org/">
         <p class="standout__subtitle">
-          Remembering the 1,200 children taken by gun violence in America this
+          <b>Remembering</b><br>the more than 1,100 children taken by gun violence in America this
           year.
         </p>
         <span class="standout__credit"
@@ -95,10 +90,24 @@
       </div>
       {% endfor %}
     </div>
-
-    <div class="grid__video" style="display: none;">
+    <div class="grid__region" data-region="indepth">
+      <span class="region__hed">In-depth</span>
+      {% for each in indepth %}
+      <div class="grid-link">
+        <a href="{{ each.url }}">
+          <h4>{{ each.hed }}</h4>
+        </a>
+      </div>
+      {% endfor %}
     </div>
   </div>
+  <div class="grid-container grid-videos">
+    <div class="grid__video">
+      <iframe src="https://www.miamiherald.com/latest-news/article226099920.html/video-embed" width="640" height="400"
+        frameborder="0" allowfullscreen="true"></iframe>
+    </div>
+  </div>
+  <div class="lp-credits">Design and development by Aaron Albright</div>
   <script src="../js/main.js"></script>
-{# </div> #}
-{# {%endblock%} #}
+</div>
+{%endblock%}

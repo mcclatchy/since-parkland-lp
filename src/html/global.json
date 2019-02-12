@@ -11,6 +11,11 @@
 			"url": "https://www.miamiherald.com/news/state/florida/article224898685.html"
 		},
 		{
+			"state": "Illinois",
+			"hed": "In Illinois, kids have been fatally shot at 10, faced gun charges at 12, prison at 16",
+			"url": "https://www.bnd.com/news/local/crime/article225516880.html"
+		},
+		{
 			"state": "Kansas City",
 			"hed": "More than 50 children killed in 3 years: Guns take a heavy toll in Kansas City area",
 			"url": "https://www.kansascity.com/news/local/crime/article224964390.html"
@@ -44,7 +49,7 @@
 	"national": [
 		{
 			"hed": "12 months, nearly 1,200 deaths: the year in youth gun violence since Parkland",
-			"url": "https://www.miamiherald.com/news/nation-world/national/article224680840.html"
+			"url": "https://www.mcclatchydc.com/news/nation-world/national/article224680840.html"
 		},
 		{
 			"hed": "Do careless gun owners go to jail when their kids shoot themselves? It depends",
@@ -55,12 +60,18 @@
 			"url": "https://www.miamiherald.com/news/nation-world/national/article224983580.html"
 		},
 		{
-			"hed": "In the great gun debate, Parkland changed everything. And nothing",
+			"hed": "In the great gun debate, Parkland changed everything. And maybe nothing.",
 			"url": "https://www.miamiherald.com/news/nation-world/national/article224594280.html"
 		},
 		{
 			"hed": "How Wilmington DE is curbing gun violence among teens, kids",
-			"url": "https://www.miamiherald.com/news/nation-world/national/article226090070.html"
+			"url": "https://www.mcclatchydc.com/news/nation-world/national/article226090070.html"
+		}
+	],
+	"indepth": [
+		{
+			"hed": "How we tracked gun violence across the country since Parkland",
+			"url": "https://www.miamiherald.com/news/nation-world/national/article224957145.html"
 		}
 	]
 }

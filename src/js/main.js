@@ -1,7 +1,7 @@
 import { $1 } from './modules/helpers';
 import { apdate, intcomma } from 'journalize';
 import * as d3 from 'd3-fetch';
-import csvFile from '../assets/PerDate_2-8-19.csv';
+import csvFile from '../assets/PerDate2-10-19.csv';
 import deathTypes from './modules/deathTypes.json';
 import pics from '../imgs/*.jpg';
 
@@ -10,7 +10,8 @@ const imgMax = 29;
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  const host = 'www.miamiherald.com';
+  let host = location.hostname;
+  if (host== 'localhost') host = 'www.miamiherald.com'
   let market = host.match(r)[1];
 
   switch (market) {
@@ -22,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     case 'charlotteobserver':
       market = 'newsobserver';
       break;
+    case 'bradenton':
+      market = 'miamiherald';
+      break;
+    case 'macon':
+      market = 'ledger-enquirer';
   }
   
   sortToTop(market); // Moves story to top based on market location
@@ -53,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   d3.csv(csvFile, function(d) {
     return {
-      date: new Date(d['Date of Incident']),
-      count: +d['Count']
+      date: new Date(d['date']),
+      count: +d['count']
     };
   }).then(function(data) {
     let index = 0;
