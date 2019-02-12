@@ -5,7 +5,7 @@ import csvFile from '../assets/PerDate2-10-19.csv';
 import deathTypes from './modules/deathTypes.json';
 import pics from '../imgs/*.jpg';
 
-const r = /www.(\S+).com/; // regex to extract market name
+const r = /[wamp]{3}.(\S+).com/; // regex to extract market name
 const imgMax = 29;
 
 document.addEventListener('DOMContentLoaded', function() {
