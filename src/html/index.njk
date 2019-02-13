@@ -1,4 +1,4 @@
-{%extends "templates/base.njk"%} {%block content%}
+{# {%extends "templates/base.njk"%} {%block content%} #}
   <link rel="stylesheet" href="../scss/main.scss" />
   <style>
     .content-body > p {
@@ -53,9 +53,10 @@
     <div class="grid__standout">
       <a href="https://sinceparkland.org/" target="_blank" rel="noopener noreferrer">
         <p class="standout__subtitle">
-          <b>Remembering</b><br>the more than 1,100 children taken by gun violence in America this
+          <b>Remembering</b><br>the 1,200 children taken by gun violence in America this
           year.
         </p>
+        <span class="standout__cta">Read their stories</span>
         <span class="standout__credit"
           >In partnership with <img src="../assets/trace-logo.png" alt=""
         /></span>
@@ -133,6 +134,7 @@
     <span class="credit__label">Copy Editor</span>
     <p class="credit__name">Mary Behne</p>
     </div>
+    <div class="credit__group trace"><a href="https://sinceparkland.org/about" target="_blank" rel="noopener noreferrer">In partnership with The Trace</a></div>
   </div>
   <script src="../js/main.js"></script>
-{%endblock%}
+{# {%endblock%} #}
