@@ -130,6 +130,10 @@ function sortToTop(market) {
   let links = document.querySelectorAll('.grid-link > a');
   let match;
 
+  let readMore = document.createElement('p');
+  readMore.className = 'lead__more';
+  readMore.innerText = "Read More";
+
   links.forEach(el => {
     let hostName = el.href;
     let hostMatch = hostName.match(r);
@@ -139,6 +143,8 @@ function sortToTop(market) {
     if (market === hostMatch[1] && stateCheck) {
       match = true;
       el.parentElement.classList.add('grid-link--lead');
+      el.appendChild(readMore);
+      
       let region = el.parentElement.parentElement;
       region.classList.add('grid__region--lead');
     }
