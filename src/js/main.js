@@ -1,7 +1,7 @@
 import { $1 } from './modules/helpers';
 import { apdate, intcomma } from 'journalize';
 import * as d3 from 'd3-fetch';
-import csvFile from '../assets/PerDate2-10-19.csv';
+import csvFile from '../assets/PerDate2-13-19.csv';
 import deathTypes from './modules/deathTypes.json';
 import pics from '../imgs/*.jpg';
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function sortToTop(market) {
-  let links = document.querySelectorAll('.grid-link > a');
+  let links = document.querySelectorAll('.grid-link:not(.grid-link--org) > a');
   let match;
 
   let readMore = document.createElement('p');

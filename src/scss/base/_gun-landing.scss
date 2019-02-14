@@ -75,27 +75,6 @@ body section[role='main'] {
     font-size: 16px;
     margin-bottom: 5px;
   }
-  .credit__group:first-of-type {
-    grid-row: 1/ 3;
-  }
-}
-
-.credit__group.trace {
-  grid-column: 1/3;
-  text-align: center;
-  font-family: 'McClatchy Sans', sans-serif;
-  opacity: 0.75;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-top: 10px;
-  a {
-    color: $accent-color;
-    &::after {
-      font-family: FontAwesome;
-      content: '\f178';
-      margin-left: 5px;
-    }
-  }
 }
 
 @media (max-width: 768px) {
@@ -322,6 +301,11 @@ body section[role='main'] {
 
 .grid__region[data-region='national'] {
   grid-area: national;
+}
+
+.grid__region[data-state="ga"]:not(.grid__region--lead) {
+  grid-row: span 2;
+  align-self: stretch;
 }
 
 .grid__region--lead {
