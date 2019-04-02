@@ -1,6 +1,4 @@
-# McCustom Starter
-Basic static site builder to be used on McClatchy Sinclair pages.
-
+# Since Parkland landing page
 Built with [Parcel.js](https://parceljs.org/).
 
 **Includes**
@@ -9,7 +7,6 @@ Built with [Parcel.js](https://parceljs.org/).
 * `autoprefixer`
 * `eslint`
 * `nunjucks`
-
 
 ## Install
 
